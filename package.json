@@ -1,0 +1,26 @@
+{
+  "name": "graphql-pracs",
+  "version": "1.0.0",
+  "description": "ECHO is on.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bada9te/GraphQL-Practice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bada9te/GraphQL-Practice/issues"
+  },
+  "homepage": "https://github.com/bada9te/GraphQL-Practice#readme",
+  "dependencies": {
+    "apollo-server": "^3.12.1",
+    "graphql": "^16.8.1",
+    "nodemon": "^3.0.1"
+  }
+}

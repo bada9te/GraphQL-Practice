@@ -28,4 +28,34 @@ module.exports = {
             return MovieList.filter(item => item.yearOfPublication >= 2000 && item.yearOfPublication <= 2007);
         }
     },
+
+    Mutation: {
+        createUser: (parent, args) => {
+            const user = args.input;
+            const lastId = UserList[UserList.length - 1].id;
+            user.id = lastId + 1;
+            UserList.push(user);
+            return user;
+        },
+
+        updateUsername: (parent, args) => {
+            const {id, newUsername} = args.input;
+            let updatedUser;
+            UserList.forEach(u => {
+                if (u.id === Number(id)) {
+                    u.name = newUsername;
+                    updatedUser = u;
+                }
+            });
+
+            return updatedUser;
+        },
+
+        deleteUser: (parent, args) => {
+            const {id} = args.input;
+            let deletedUser = UserList.find(u => u.id === Number(id));
+            UserList = UserList.filter(u => u.id !== deletedUser.id);
+            return deletedUser;
+        }
+    },
 };

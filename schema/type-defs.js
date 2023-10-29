@@ -8,7 +8,7 @@ module.exports = gql`
         username: String!
         age: Int!
         nationality: Nationality!
-        friends: [User!]
+        friends: [User]
         favoriteMovies: [Movie]
     }
 
@@ -24,6 +24,28 @@ module.exports = gql`
         user(id: ID!): User!
         movies: [Movie]!
         movie(name: String!) : Movie!
+    }
+
+    input CreateUserInput {
+        name: String!
+        username: String!
+        age: Int = 18
+        nationality: Nationality = CANADA
+    }
+
+    input UpdateUsernameInput {
+        id: ID!
+        newUsername: String!
+    }
+
+    input DeleteUserInput {
+        id: ID!
+    }
+
+    type Mutation {
+        createUser(input: CreateUserInput!): User!
+        updateUsername(input: UpdateUsernameInput): User
+        deleteUser(input: DeleteUserInput) : User
     }
 
     enum Nationality {

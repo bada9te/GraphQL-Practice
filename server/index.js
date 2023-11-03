@@ -6,5 +6,5 @@ const SERVER = new ApolloServer({ typeDefs, resolvers });
 
 
 SERVER.listen().then(({url}) => {
-    console.log(`API is running at: ${url}`)
+    console.log(`API is running at: ${url}`);
 });

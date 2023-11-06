@@ -54,5 +54,6 @@ module.exports = gql`
         INDIA
         GERMANY
         CHILE
+        UKRAINE
     }
 `;
